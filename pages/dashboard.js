@@ -9,9 +9,7 @@ export default function Index({ data, teamName }) {
 
 export async function getServerSideProps(_ctx) {
   const teamName = getCookie(_ctx.req.headers.cookie, "teamName");
-
   const res = await httpPOST(`${getBaseURL()}/api/teamData`, { teamName });
-
   const data = res.members;
 
   return { props: { data, teamName } };
