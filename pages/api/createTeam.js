@@ -18,7 +18,7 @@ handler.post(async (req, res) => {
   try {
     const { teamName, password } = req.body;
     await databaseHelper.connect(DB_NAME);
-    const a = await databaseHelper.createTeam(teamName, password, TABLE);
+    await databaseHelper.createTeam(teamName, password, TABLE);
     await databaseHelper.connection.close();
 
     res.setHeader("Set-Cookie", [`teamName=${teamName};path=/`]);

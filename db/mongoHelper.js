@@ -30,10 +30,10 @@ class MongoHelper {
       .insertOne({ teamName, password, members: [] });
   }
 
-  async addMember(name, teamName) {
+  async addMember(name, teamName, table) {
     await this.db
       .collection(table)
-      .update({ teamName }, { $push: { mumbers: { name, count: 0 } } });
+      .update({ teamName }, { $push: { members: { name, count: 0 } } });
   }
 
   async getTeamData(teamName, table) {

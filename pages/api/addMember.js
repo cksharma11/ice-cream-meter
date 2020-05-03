@@ -26,6 +26,7 @@ handler.post(async (req, res) => {
     res.writeHead(302, { Location: "/dashboard" });
     res.end();
   } catch (e) {
+    console.log(e)
     res.end(e);
   }
 });
