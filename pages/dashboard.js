@@ -1,5 +1,5 @@
 import Dashboard from "../components/Dashboard/Dashboard";
-import { getBaseURL } from "../utils/getBaseUrl";
+import getBaseURL from "../utils/getBaseUrl";
 import getCookie from "../utils/getCookie";
 import { httpPOST } from "../httpClient/httpClient";
 
