@@ -5,9 +5,10 @@ import Meter from "../Meter/Meter";
 import AddMember from "../AddMember/AddMember";
 
 const Dashboard = ({ data, teamName }) => {
+  const title = `Team ${teamName}'s Ice Cream Meter`;
   return (
     <div>
-      <Header title={teamName} />
+      <Header title={title} />
       <AddMember />
       <Meter data={data} />
       <style jsx>{DashboardStyles}</style>

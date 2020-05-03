@@ -22,6 +22,7 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   vertical-align: baseline;
+  color: #ececec;
 }
 
 article,
@@ -43,6 +44,7 @@ html {
   box-sizing: border-box;
   line-height: 1;
   min-height: 100vh;
+  background: #222831;
 }
 
 body {
@@ -52,6 +54,7 @@ body {
   font-family: Lato, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: "#222831";
 }
 
 button {
@@ -67,12 +70,16 @@ button {
   border-radius: 2px;
   margin: 5px;
   cursor: pointer;
-  border: 1px solid gray;
+  border: 1px solid #30475e;
   text-decoration: none;
-  color: black;
+  color: #ececec;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.link:hover {
+  background: #30475e;
 }
 
 .flex {
@@ -96,4 +103,5 @@ button {
 
 input[type="submit"]:hover {
   cursor: pointer;
+  background: #647281;
 }
