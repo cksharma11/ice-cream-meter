@@ -2,8 +2,9 @@ import React from "react";
 import Header from "../Header/Header";
 import DashboardStyles from "./Dashboard.style";
 import Meter from "../Meter/Meter";
+import AddMember from "../AddMember/AddMember";
 
-const data = [
+const dummy = [
   { name: "Suhas", count: 0 },
   { name: "Rishi", count: 3 },
   { name: "Keshav", count: 0 },
@@ -12,10 +13,11 @@ const data = [
   { name: "Geeta", count: 1 },
 ];
 
-const Dashboard = () => {
+const Dashboard = ({ data = dummy }) => {
   return (
     <div>
       <Header title="Audits and Agreements" />
+      <AddMember />
       <Meter data={data} />
       <style jsx>{DashboardStyles}</style>
     </div>

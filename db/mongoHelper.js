@@ -25,10 +25,20 @@ class MongoHelper {
   }
 
   async createTeam(teamName, password, table) {
-    console.log("CREATING TEAM");
     await this.db
       .collection(table)
       .insertOne({ teamName, password, members: [] });
+  }
+
+  async addMember(name, teamName) {
+    await this.db
+      .collection(table)
+      .update({ teamName }, { $push: { mumbers: { name, count: 0 } } });
+  }
+
+  async getTeamData(teamName, table) {
+    const data = await this.db.collection(table).findOne({ teamName });
+    return data.members;
   }
 }
 

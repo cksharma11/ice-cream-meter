@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CreateTeamStyles from "./CreateTeam.style";
 import Header from "../Header/Header";
-import { httpPOST } from "../../httpClient/httpClient";
 
 const CreateTeam = () => {
   const [teamName, setTeamName] = useState(undefined);
