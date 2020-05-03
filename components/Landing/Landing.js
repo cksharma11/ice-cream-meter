@@ -1,13 +1,19 @@
 import React from "react";
 import LandingStyles from "./Landing.styles";
+import Link from "next/link";
+import Header from "../Header/Header";
 
 const Landing = () => {
   return (
     <div className="landingContainer">
-      <h1 className="heading">Ice Cream Meter</h1>
+      <Header />
       <div className="optionContainer">
-        <button>Create Team</button>
-        <button>Team Login</button>
+        <Link href="/createTeam">
+          <a className="link">Create Team</a>
+        </Link>
+        <Link href="/">
+          <a className="link">Log In Team</a>
+        </Link>
       </div>
       <style jsx>{LandingStyles}</style>
     </div>
