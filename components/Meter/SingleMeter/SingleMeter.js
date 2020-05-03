@@ -8,13 +8,13 @@ const SingleMeter = ({ stats }) => {
   const [count, setCount] = useState(initialCount);
 
   const incCount = async () => {
-    const { success } = await httpPOST("/api/incIcecreamCount", { name });
-    if (success) setCount(count + 1);
+    const { error } = await httpPOST("/api/incIcecreamCount", { name });
+    if (!error) setCount(count + 1);
   };
 
   const decCount = async () => {
-    const { success } = await httpPOST("/api/decIcecreamCount", { name });
-    if (success) setCount(count - 1);
+    const { error } = await httpPOST("/api/decIcecreamCount", { name });
+    if (!error) setCount(count - 1);
   };
 
   return (
