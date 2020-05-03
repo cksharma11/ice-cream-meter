@@ -11,7 +11,7 @@ const Landing = () => {
         <Link href="/createTeam">
           <a className="link">Create Team</a>
         </Link>
-        <Link href="/">
+        <Link href="/logInTeam">
           <a className="link">Log In Team</a>
         </Link>
       </div>
