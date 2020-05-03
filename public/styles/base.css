@@ -45,6 +45,11 @@ html {
   line-height: 1;
   min-height: 100vh;
   background: #222831;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://www.itl.cat/pngfile/big/108-1086892_ice-cream-food-colorful-food-and-drink-cone.jpg);
 }
 
 body {
@@ -67,7 +72,7 @@ button {
   width: 200px;
   padding: 10px;
   font-size: 18px;
-  border-radius: 2px;
+  border-radius: 4px;
   margin: 5px;
   cursor: pointer;
   border: 1px solid #30475e;
@@ -76,6 +81,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #222831db;
 }
 
 .link:hover {

@@ -10,7 +10,7 @@ const MeterStyles = css`
   }
 
   .meter {
-    background: ${palette.forth};
+    background: #ecececd4;
     border: 1px solid black;
     height: 210px;
     width: 21%;

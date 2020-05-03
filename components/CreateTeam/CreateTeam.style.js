@@ -4,9 +4,10 @@ const CreateTeamStyles = css`
   .createTeamForm {
     height: 400px;
     width: 40%;
-    border: 1px solid #30475e;
+    border: 1px solid #222831db;
     margin-top: 8%;
     border-radius: 5px;
+    background: #222831db;
   }
 
   input,

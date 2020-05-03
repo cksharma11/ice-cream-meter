@@ -11,7 +11,7 @@ const LoginTeam = () => {
         action="/api/logInTeam"
         className="logInTeamForm flex"
       >
-        <h1 className="formTitle">Create Team</h1>
+        <h1 className="formTitle">Log In Team</h1>
         <input type="text" placeholder="team name" name="teamName" required />
         <input
           type="password"

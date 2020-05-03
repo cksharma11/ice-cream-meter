@@ -19,7 +19,7 @@ const DashboardStyles = css`
   input[type="submit"] {
     width: 210px;
     height: 40px;
-    background: #30475e;
+    background: #222831db;
     color: #ececec;
   }
 `;

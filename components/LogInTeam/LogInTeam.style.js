@@ -5,8 +5,10 @@ const LoginInTeamStyles = css`
   .logInTeamForm {
     height: 400px;
     width: 40%;
-    border: 1px solid ${palette.secondry};
+    border: 1px solid #222831db;
     margin-top: 8%;
+    border-radius: 5px;
+    background: #222831db;
   }
 
   input,
