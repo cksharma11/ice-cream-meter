@@ -3,8 +3,8 @@ import { getBaseURL } from "../utils/getBaseUrl";
 import getCookie from "../utils/getCookie";
 import { httpPOST } from "../httpClient/httpClient";
 
-export default function Index({ data }) {
-  return <Dashboard data={data} />;
+export default function Index({ data, teamName }) {
+  return <Dashboard data={data} teamName={teamName} />;
 }
 
 export async function getServerSideProps(_ctx) {
@@ -14,5 +14,5 @@ export async function getServerSideProps(_ctx) {
 
   const data = res.members;
 
-  return { props: { data } };
+  return { props: { data, teamName } };
 }

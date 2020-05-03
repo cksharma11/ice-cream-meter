@@ -40,6 +40,24 @@ class MongoHelper {
     const data = await this.db.collection(table).findOne({ teamName });
     return { members: data.members };
   }
+
+  async incrementIcecreamCount(teamName, member, table) {
+    await this.db
+      .collection(table)
+      .update(
+        { teamName, "members.name": member },
+        { $inc: { "members.$.count": 1 } }
+      );
+  }
+
+  async decrimentIcecreamCount(teamName, member, table) {
+    await this.db
+      .collection(table)
+      .update(
+        { teamName, "members.name": member },
+        { $inc: { "members.$.count": -1 } }
+      );
+  }
 }
 
 export default MongoHelper;
