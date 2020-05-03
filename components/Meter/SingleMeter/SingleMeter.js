@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import MeterStyles from "../Meter.style";
 import { httpPOST } from "../../../httpClient/httpClient";
 
 const SingleMeter = ({ stats }) => {
-  const { name, count } = stats;
+  const { name, count: initialCount } = stats;
+
+  const [count, setCount] = useState(initialCount);
 
   const incCount = async () => {
-    await httpPOST("/api/incIcecreamCount", { name });
+    const { success } = await httpPOST("/api/incIcecreamCount", { name });
+    if (success) setCount(count + 1);
   };
 
   const decCount = async () => {
-    await httpPOST("/api/decIcecreamCount", { name });
+    const { success } = await httpPOST("/api/decIcecreamCount", { name });
+    if (success) setCount(count - 1);
   };
 
   return (

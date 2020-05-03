@@ -23,11 +23,10 @@ handler.post(async (req, res) => {
     await databaseHelper.incrementIcecreamCount(teamName, name, TABLE);
     await databaseHelper.connection.close();
 
-    res.writeHead(302, { Location: "/dashboard" });
-    res.end();
+    res.send({ success: true });
   } catch (e) {
     console.log(e);
-    res.end(e);
+    res.send({ success: false });
   }
 });
 
