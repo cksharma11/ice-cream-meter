@@ -8,7 +8,7 @@ const Meter = ({ data }) => {
       {data
         .sort((a, b) => b.count - a.count)
         .map((m) => (
-          <SingleMeter stats={m} />
+          <SingleMeter stats={m} key={m.name} />
         ))}
       <style jsx>{MeterStyles}</style>
     </div>

@@ -4,7 +4,7 @@ import Document, { Head, Main, NextScript } from "next/document";
 class IceCreamMeterDocument extends Document {
   render() {
     return (
-      <html lang="es">
+      <html>
         <link rel="stylesheet" type="text/css" href="/styles/base.css" />
         <title>Ice Cream Meter</title>
         <Head></Head>
