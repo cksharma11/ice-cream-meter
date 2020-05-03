@@ -2,7 +2,6 @@ require("dotenv").config();
 import nextConnect from "next-connect";
 import { MongoClient } from "mongodb";
 import getConfig from "next/config";
-import MongoHelper from "../../db/mongoHelper";
 
 const { serverRuntimeConfig } = getConfig();
 
