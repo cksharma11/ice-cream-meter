@@ -14,14 +14,12 @@ const DB_NAME = serverRuntimeConfig.DB_NAME || process.env.DB_NAME;
 
 const databaseHelper = new MongoHelper(MongoClient, DB_URL);
 
-handler.get(async (req, res) => {
+handler.post(async (req, res) => {
   try {
-    const { teamName } = req.cookies;
-
+    const { teamName } = req.body;
     await databaseHelper.connect(DB_NAME);
     const teamData = await databaseHelper.getTeamData(teamName, TABLE);
     await databaseHelper.connection.close();
-
     res.send(teamData);
   } catch (e) {
     console.log(e);

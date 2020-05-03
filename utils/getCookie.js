@@ -1,6 +1,5 @@
-const getCookie = function (name) {
-  console.log(document.cookie);
-  const cookieArr = document.cookie.split(";");
+const getCookie = function (store, name) {
+  const cookieArr = store.split(";");
 
   for (let i = 0; i < cookieArr.length; i++) {
     let cookiePair = cookieArr[i].split("=");

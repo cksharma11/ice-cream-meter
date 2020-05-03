@@ -6,7 +6,7 @@ export async function httpPOST(url, body, headers = {}) {
     headers: { "Content-Type": "application/json", ...headers },
     body: JSON.stringify(body),
   });
-  // return response.json();
+  return response.json();
 }
 
 export async function httpGET(url) {

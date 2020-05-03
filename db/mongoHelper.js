@@ -38,7 +38,7 @@ class MongoHelper {
 
   async getTeamData(teamName, table) {
     const data = await this.db.collection(table).findOne({ teamName });
-    return data.members;
+    return { members: data.members };
   }
 }
 
