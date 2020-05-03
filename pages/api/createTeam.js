@@ -1,24 +1,15 @@
 require("dotenv").config();
 import nextConnect from "next-connect";
-import { MongoClient } from "mongodb";
-import getConfig from "next/config";
-
-const { serverRuntimeConfig } = getConfig();
+import middleware, { TABLE } from "../../middleware/dbConnnection";
 
 const handler = nextConnect();
-
-const DB_URL = serverRuntimeConfig.DB_URL || process.env.DB_URL;
-const TABLE = serverRuntimeConfig.TABLE || process.env.TABLE;
-const DB_NAME = serverRuntimeConfig.DB_NAME || process.env.DB_NAME;
-
-const databaseHelper = new MongoHelper(MongoClient, DB_URL);
+handler.use(middleware);
 
 handler.post(async (req, res) => {
   try {
     const { teamName, password } = req.body;
-    await databaseHelper.connect(DB_NAME);
-    await databaseHelper.createTeam(teamName, password, TABLE);
-    await databaseHelper.connection.close();
+
+    await req.dbClient.createTeam(teamName, password, TABLE);
 
     res.setHeader("Set-Cookie", [`teamName=${teamName};path=/`]);
     res.writeHead(302, { Location: "/dashboard" });
