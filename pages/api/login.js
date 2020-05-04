@@ -10,9 +10,21 @@ handler.post(
   runWithAsyncWrapper(async (req, res) => {
     const { teamName, password } = req.body;
 
-    await req.dbClient.createTeam(teamName, password, TABLE);
+    const result = await req.dbClient.verifyLoginDetails(
+      teamName,
+      password,
+      TABLE
+    );
 
-    res.writeHead(302, { Location: "/logInTeam" });
+    if (result.length == 0) {
+      return res.send({
+        error: true,
+        message: "TEAM NAME OR PASSWORD INCORRECT",
+      });
+    }
+
+    res.setHeader("Set-Cookie", [`teamName=${teamName};path=/`]);
+    res.writeHead(302, { Location: "/dashboard" });
     res.end();
   })
 );

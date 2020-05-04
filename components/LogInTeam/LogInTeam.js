@@ -6,11 +6,7 @@ const LoginTeam = () => {
   return (
     <div className="container flex">
       <Header />
-      <form
-        method="POST"
-        action="/api/logInTeam"
-        className="logInTeamForm flex"
-      >
+      <form method="POST" action="/api/login" className="logInTeamForm flex">
         <h1 className="formTitle">Log In Team</h1>
         <input type="text" placeholder="team name" name="teamName" required />
         <input

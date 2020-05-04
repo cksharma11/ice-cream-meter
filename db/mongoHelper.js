@@ -58,6 +58,13 @@ class MongoHelper {
         { $inc: { "members.$.count": -1 } }
       );
   }
+
+  async verifyLoginDetails(teamName, password, table) {
+    return await this.db
+      .collection(table)
+      .find({ teamName, password })
+      .toArray();
+  }
 }
 
 export default MongoHelper;
