@@ -9,6 +9,7 @@ const CreateTeam = () => {
   const [error, setError] = useState(undefined);
 
   useEffect(() => {
+    setError("");
     if (password !== confirmPassword) {
       setError("Password does not match with confirm password!");
     }
