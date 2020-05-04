@@ -6,5 +6,6 @@ export default function getBaseURL() {
   const host = process.env.SERVER_HOST;
   const port = process.env.SERVER_PORT;
 
-  return `${protocol}://${host}:${port}`;
+  const url = `${protocol}://${host}${port ? `:${port}` : ""}`;
+  return url;
 }
