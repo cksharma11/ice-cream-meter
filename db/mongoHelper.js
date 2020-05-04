@@ -65,6 +65,10 @@ class MongoHelper {
       .find({ teamName, password })
       .toArray();
   }
+
+  async getAllTeamData(table) {
+    return await this.db.collection(table).find({}).toArray();
+  }
 }
 
 export default MongoHelper;
