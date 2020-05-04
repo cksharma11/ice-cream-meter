@@ -7,19 +7,19 @@ const CreateTeam = ({ teamNames }) => {
   const [password, setPassword] = useState(undefined);
   const [confirmPassword, setConfirmPassword] = useState(undefined);
   const [error, setError] = useState(undefined);
-  const [isValidForm, setIsValidForm] = useState(false);
 
   useEffect(() => {
     setError("");
     if (password !== confirmPassword) {
-      setIsValidForm(false);
       setError("Password does not match with confirm password!");
     }
     if (teamNames.includes(teamName)) {
-      setIsValidForm(false);
       setError("Team name already taken!");
     }
   }, [password, confirmPassword, teamName]);
+
+  const canSubmitForm = () =>
+    password === confirmPassword && !teamNames.includes(teamName);
 
   return (
     <div className="container flex">
@@ -57,7 +57,7 @@ const CreateTeam = ({ teamNames }) => {
           }}
         />
         {error && <p className="errorMessage">{error}</p>}
-        <input disabled={!isValidForm} type="submit" value="Create Team" />
+        <input disabled={!canSubmitForm()} type="submit" value="Create Team" />
       </form>
       <style jsx>{CreateTeamStyles}</style>
     </div>
