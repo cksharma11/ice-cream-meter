@@ -27,7 +27,7 @@ class MongoHelper {
   async createTeam(teamName, password, table) {
     await this.db
       .collection(table)
-      .insertOne({ teamName, password, members: [] });
+      .insert({ teamName, password, members: [] });
   }
 
   async addMember(name, teamName, table) {
