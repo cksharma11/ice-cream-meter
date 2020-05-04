@@ -1,6 +1,6 @@
 import React from "react";
 import CreateTeam from "../components/CreateTeam/CreateTeam";
-import getBaseURL from "../utils/getBaseUrl";
+import getBaseURL from "../utils/getBaseURL";
 import { httpPOST } from "../httpClient/httpClient";
 
 export default function Index({ teamNames }) {

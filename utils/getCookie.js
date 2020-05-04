@@ -1,4 +1,4 @@
-const getCookie = function (store, name) {
+const getCookie = function (store = ";", name) {
   const cookieArr = store.split(";");
 
   for (let i = 0; i < cookieArr.length; i++) {
