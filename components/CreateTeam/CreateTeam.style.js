@@ -32,11 +32,6 @@ const CreateTeamStyles = css`
   .formTitle {
     padding: 10px;
   }
-
-  .errorMessage {
-    font-size: 12px;
-    color: red;
-  }
 `;
 
 export default CreateTeamStyles;

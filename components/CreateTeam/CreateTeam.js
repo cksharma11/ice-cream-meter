@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CreateTeamStyles from "./CreateTeam.style";
 import Header from "../Header/Header";
+import ErrorMessage from "../Error/ErrorMessage";
 
 const CreateTeam = ({ teamNames }) => {
   const [teamName, setTeamName] = useState(undefined);
@@ -56,7 +57,7 @@ const CreateTeam = ({ teamNames }) => {
             setConfirmPassword(e.target.value);
           }}
         />
-        {error && <p className="errorMessage">{error}</p>}
+        {error && <ErrorMessage message={error} />}
         <input disabled={!canSubmitForm()} type="submit" value="Create Team" />
       </form>
       <style jsx>{CreateTeamStyles}</style>
