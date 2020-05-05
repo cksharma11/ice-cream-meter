@@ -1,30 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+## Icecream Meter
 
-## Getting Started
+### A pet project that can be used by teams to track their team's Icecreams's counts.
 
-First, run the development server:
+User Journey
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+ 1. Create Your Team with a password [create team](http://icecreammeter.herokuapp.com/createTeam)
+ 2. Login to your team [team login](http://icecreammeter.herokuapp.com/logInTeam)
+ 3. Add member/members to your team [dashboard](http://icecreammeter.herokuapp.com/dashboard)
+ 4. Increase/Decrease count. [dashboard](http://icecreammeter.herokuapp.com/dashboard)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
